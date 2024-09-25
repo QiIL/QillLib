@@ -1,0 +1,37 @@
+{
+    "erlang-symbols.searchPaths": [
+        "apps",
+        "src",
+        "libs"
+    ],
+    "erlang-symbols.includeFiles": "**/*.hrl",
+    "erlang-symbols.erlangPath": "",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.beam": true
+    },
+    "files.associations": {
+        "*.tab": "properties",
+        "Emakefile": "properties",
+        "*.sh": "shellscript",
+        "*.config": "properties",
+        "*.escript": "erlang",
+        "*.es": "erlang",
+        "*.conf": "properties",
+        "*.tpl": "ini"
+    },
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+    "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToTypeDefinition",
+    "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.goToTypeDefinition",
+    "editor.gotoLocation.alternativeImplementationCommand": "editor.action.goToTypeDefinition",
+    "editor.gotoLocation.alternativeReferenceCommand": "editor.action.goToTypeDefinition",
+    "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.goToTypeDefinition"
+}
