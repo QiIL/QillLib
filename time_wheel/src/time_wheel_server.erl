@@ -17,7 +17,7 @@
 -record(stat, {interval}).
 
 start_link(Tick) ->
-    gen_server:start_link({local, ?MODULE}, ?MODULE, [], [Tick]).
+    gen_server:start_link({local, ?MODULE}, ?MODULE, [Tick], []).
 
 init([Interval]) ->
     process_flag(trap_exit, true),
@@ -25,9 +25,22 @@ init([Interval]) ->
     erlang:send_after(Interval, self(), tick),
     {ok, #stat{interval = Interval}}.
 
+handle_call(i, _, State) ->
+    Reply = time_wheel:i(),
+    {reply, Reply, State};
+handle_call({test_insert, After}, _, State) ->
+    Reply = time_wheel:test_insert(After),
+    {reply, Reply, State};
 handle_call(_Request, _, State) ->
     {reply, ok, State}.
 
+
+handle_cast(i, State) ->
+    time_wheel:i(),
+    {noreply, State};
+handle_cast({test_insert, After}, State) ->
+    time_wheel:test_insert(After),
+    {noreply, State};
 handle_cast(_Req, State) ->
     {noreply, State}.
 

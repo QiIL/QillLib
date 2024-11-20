@@ -82,9 +82,8 @@ init_wheel(Interval, Wheels) ->
         false -> Wheels
     end,
     init_wheel_sub(FixWheels, 0),
-    [{#time_wheel{index = RootIndex} = Root, _} |_] = FixWheels,
+    [{RootIndex, _} |_] = FixWheels,
     set_root_index(RootIndex),
-    set_time_wheel(Root),
     ets:new(?ETS_TIME_WHEEL, [named_table, set]),
     ok.
 
